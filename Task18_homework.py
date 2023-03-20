@@ -15,7 +15,7 @@ while True:
     n = input('Введите количество элементов массива: ')
     x = input('Введите число для проверки: ')
 
-    if not n.isdigit() or not x.isdigit:
+    if not n.isdigit() or not x.isdigit():
         print('Данные введены неверно. Повторите попытку.')
     else:
         break
