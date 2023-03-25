@@ -6,11 +6,6 @@
 
 # если степень отрицительная то корень а в степени б
 
-import math
-
-a = int(input("Введите число A: "))
-b = int(input("Введите число B: "))
-
 def power(a, b):
     if b > 0:
         return a * power(a, b - 1)
@@ -18,5 +13,13 @@ def power(a, b):
         return (1 / a) * power(a, b + 1)
     else:
         return 1
+
+while True: 
+    try:
+        a = int(input("Введите число A: "))
+        b = int(input("Введите число B: "))
+        break
+    except:
+        print('Данные введены неверно. Повторите попытку.')
 
 print(f"A = {a}; B = {b} -> {power(a, b)}")
