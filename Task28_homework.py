@@ -5,18 +5,21 @@
 # 2 2
 # 4
 
-while True:
-    a = input('Введите целое неотрицательное число A: ')
-    b = input('Введите целое неотрицательное число B: ')
-
-    if not a.isdigit() or not b.isdigit() or int(a) < 0 or int(b) < 0:
-        print('Данные введены неверно. Повторите попытку.')
-    else:
-        break
-
 def sum(a, b):
     if a == 0:
         return b
     return sum(a - 1, b + 1)
 
-print(f"Сумма чисел A и B равна {sum(int(a), int(b))}")
+while True:
+    try:
+        a = int(input('Введите целое неотрицательное число A: '))
+        b = int(input('Введите целое неотрицательное число B: '))
+
+        if a < 0 or b < 0:
+            print('Числа A и B должны быть неотрицательными. Повторите попытку.')
+        else:
+            break
+    except:
+        print('Данные введены неверно. Повторите попытку.')
+
+print(f"Сумма чисел A и B равна {sum(a, b)}")
